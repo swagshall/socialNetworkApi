@@ -13,7 +13,7 @@ module.exports = {
       });
   },
   // Get a user
-  getSingleStudent(req, res) {
+  getSingleUser(req, res) {
     User.findOne({ _id: params.id })
         .populate([
             { path: 'thoughts'},
