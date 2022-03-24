@@ -12,10 +12,10 @@ connection.once('open', async () => {console.log('Database connected');
   await Thoughts.deleteMany({});
 
 
-  await User.insertMany(getUser);
+  await User.insertMany(users);
 
 
-  await Thoughts.insertMany(getThoughts);
+  await Thoughts.insertMany(thoughts);
 
   // Log out the seed data to indicate what should appear in the database
   console.table(users);
