@@ -2,7 +2,7 @@ const { Thought, User, Reaction } = require('../models');
 const res = require('express/lib/response');
 
 
-module.exports = {
+const thoughtController = {
   // Get all thoughts
   getThoughts(req, res) {
     Thought.find()
@@ -74,9 +74,9 @@ addReaction({ params, body }, res) {
 },
 
 //Delete reaction
-deleteReaction({ params, body }, res) {
+deleteReaction(req, res) {
   Thought.findOneAndUpdate(
-      { _id: params.id },
+      { _id: req.params.id },
       { $pull: { reactions: { reactionId: body.reactionId } } },
       { new: true, runValidators: true }
   )

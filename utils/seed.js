@@ -1,5 +1,5 @@
 const connection = require('../config/connection');
-const { User, Thoughts } = require('../models');
+const { User, Thought } = require('../models');
 const { users, thoughts } = require('./data');
 
 connection.on('error', (err) => err);
@@ -9,13 +9,13 @@ connection.once('open', async () => {console.log('Database connected');
   await User.deleteMany({});
 
   // Drop existing thoughts
-  await Thoughts.deleteMany({});
+  await Thought.deleteMany({});
 
 
   await User.insertMany(users);
 
 
-  await Thoughts.insertMany(thoughts);
+  await Thought.insertMany(thoughts);
 
   // Log out the seed data to indicate what should appear in the database
   console.table(users);
