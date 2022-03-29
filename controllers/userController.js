@@ -14,12 +14,11 @@ const userController = {
   },
   // Get a user
   getSingleUser(req, res) {
-    User.findOne({ _id: params.id })
+    User.findOne({ _id: req.params.id })
         .populate([
             { path: 'thoughts'},
             { path: 'friends'}
         ])
-      .select('-__v')
       .then(users =>
         !users
           ? res.status(404).json({ message: 'No user with that ID' })
