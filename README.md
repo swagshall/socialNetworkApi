@@ -37,6 +37,8 @@
 
   ## Demo
     For a video demo follow this link: 
+    PART 1: https://drive.google.com/file/d/1diqFwSHXTRD_TKDyPNS_fOY3A-5ga1gc/view
+    PART 2: https://drive.google.com/file/d/13B0loHstVMxJ94HGjs4TuVcgrcthmHtr/view
 
 
   ## Mock-Up
