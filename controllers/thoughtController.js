@@ -57,19 +57,19 @@ const thoughtController = {
   },
 
       //Create reaction 
-addReaction({ params, body }, res) {
+addReaction(req, res) {
   Thought.findOneAndUpdate(
-      { _id: params.id },
-      { $addToSet: { reactions: body } },
+      { _id: req.params.id },
+      { $addToSet: { reactions: req.body } },
       { new: true, runValidators: true }
   )
-  .then(thoughts => {
-      if (!thoughts) {
-          res.status(404).json({ message: 'No thought found with this id' });
-          return;
-      }
-      res.json(ThoughtData);
-  })
+  // .then(thoughts => {
+  //     if (!thoughts) {
+  //         res.status(404).json({ message: 'No thought found with this id' });
+  //         return;
+  //     }
+  //     res.json(ThoughtData);
+  // })
   .catch(err => res.status(500).json(err));
 },
 
